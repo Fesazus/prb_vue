@@ -12,19 +12,6 @@
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
 			<main_category></main_category>
-			<hr />
-			<div>
-				<caption>
-					Blog
-				</caption>
-				<ul>
-					<li>
-						<a class="navoption" href="sinn_des_lebens.html"
-							>Was ist der Sinn des Lebens</a
-						>
-					</li>
-				</ul>
-			</div>
 		</div>
 		<div class="wrapper">
 			<div id="container_recipy">
