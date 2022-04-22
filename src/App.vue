@@ -16,22 +16,16 @@
 		<div class="wrapper">
 			<div id="container_recipy">
 				<img :src="image" />
-				<h2>Aramäisches Weißbrot</h2>
+				<h2>{{ title }}</h2>
 				<div class="right boxed">
 					<h3>Einkaufszeddele</h3>
 					<ul>
-						<li>1 kg Mehl</li>
-						<li>600 ml lauwarmes Wasser</li>
-						<li>1 frische Hefe</li>
-						<li>1 Pk. Trockenhefe</li>
-						<li>1 EL Margarine</li>
-						<li>1 TL Salz</li>
-						<li>1 Pk. Backpulver</li>
-						<li>1 Pk. Natron</li>
-						<li>1/2 TL Zucker</li>
-						<li>2 TL Öl</li>
-						<li>Sesam</li>
-						<li>Schwarzkümmel</li>
+						<li
+							v-for="(ingredient, index) in ingredients"
+							:key="index"
+						>
+							{{ ingredient }}
+						</li>
 					</ul>
 				</div>
 				<recipy_content></recipy_content>
@@ -90,6 +84,15 @@ export default {
 	data() {
 		return {
 			image: imageRecipy,
+			title: "Paprika-Eintopf (Bamja)",
+			ingredients: [
+				"3 Zwiebeln",
+				"3 Paprika",
+				"Tomatenmark",
+				"Paprikamark",
+				"3 Beutel gefrorene Okraschoten",
+				"Wahlweise Bulgur als Beilage",
+			],
 		};
 	},
 	mounted() {

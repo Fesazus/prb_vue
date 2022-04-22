@@ -1,14 +1,16 @@
 <template>
 	<div class="nav-ul">
 		<caption>
-			Asiatisch
+			{{
+				category
+			}}
 		</caption>
 		<ul>
 			<li><a class="navoption" href="sushi.html">Sushi</a></li>
 			<li>
-				<a class="navoption" href="teriyaki-nudeln.html"
-					>Teriyaki Nudeln</a
-				>
+				<a class="navoption" href="teriyaki-nudeln.html">
+					Teriyaki Nudeln
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -18,6 +20,11 @@
 export default {
 	name: "recipy_content",
 	components: {},
+	data() {
+		return {
+			category: "Aramäisch",
+		};
+	},
 };
 </script>
 
