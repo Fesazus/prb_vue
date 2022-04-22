@@ -6,7 +6,9 @@
 			}}
 		</caption>
 		<ul>
-			<li><a class="navoption" href="sushi.html">Sushi</a></li>
+			<li>
+				<a class="navoption" href="sushi.html"> {{ title }} </a>
+			</li>
 			<li>
 				<a class="navoption" href="teriyaki-nudeln.html">
 					Teriyaki Nudeln
@@ -24,6 +26,9 @@ export default {
 		return {
 			category: "Aramäisch",
 		};
+	},
+	props: {
+		title: String,
 	},
 };
 </script>

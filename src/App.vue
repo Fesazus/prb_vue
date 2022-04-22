@@ -11,7 +11,7 @@
 			<div class="search">
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
-			<main_category></main_category>
+			<main_category title="Paprika-Eintopf (Bamja)"></main_category>
 		</div>
 		<div class="wrapper">
 			<div id="container_recipy">
