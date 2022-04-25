@@ -21,6 +21,7 @@
 				<recipyContainer
 					:amount="amount"
 					:ingredients="ingredients"
+					:instructions="instructions"
 				></recipyContainer>
 			</div>
 		</div>

@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<div class="right boxed">
-			<listWithHeadline :ingredients="ingredients"></listWithHeadline>
+			<listWithHeadline
+				:items="ingredients"
+				headline="Einkaufszeddele"
+			></listWithHeadline>
 		</div>
 	</div>
 </template>

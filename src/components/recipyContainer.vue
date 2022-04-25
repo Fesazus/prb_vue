@@ -4,7 +4,20 @@
 		<div class="left">
 			<listWithHeadline></listWithHeadline>
 			<p>{{ amount }}</p>
-
+			<!-- 			<h3
+				v-for="(instructionHeadline, index) in instructions"
+				:key="index"
+			>
+				{{ instructionHeadline }}
+			</h3>
+			<ul>
+				<li
+					v-for="(instructionListitem, index) in instructions"
+					:key="index"
+				>
+					{{ instructionListitem }}
+				</li>
+			</ul> -->
 			<h3>Zubereitung</h3>
 			<ul>
 				<li>Zwiebeln schneiden</li>
@@ -52,6 +65,7 @@ export default {
 	props: {
 		amount: String,
 		ingredients: Object,
+		instructions: Object,
 	},
 };
 </script>

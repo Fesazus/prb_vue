@@ -1,18 +1,5 @@
 <template>
-	<div class="nav-ul">
-		<recipyListCategory></recipyListCategory>
-		<h3>{{ title }}</h3>
-		<ul>
-			<li>
-				<a class="navoption" href="sushi.html"> {{ title }} </a>
-			</li>
-			<li>
-				<a class="navoption" href="teriyaki-nudeln.html">
-					Teriyaki Nudeln
-				</a>
-			</li>
-		</ul>
-	</div>
+	<recipyListCategory :title="title"></recipyListCategory>
 </template>
 
 <script>

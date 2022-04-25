@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<h3>Einkaufszeddele</h3>
 		<ul>
-			<li v-for="(ingredient, index) in ingredients" :key="index">
-				{{ ingredient }}
+			<h3>{{ headline }}</h3>
+			<li v-for="(item, index) in items" :key="index">
+				{{ item }}
 			</li>
 		</ul>
 	</div>
@@ -16,7 +16,8 @@ export default {
 		return {};
 	},
 	props: {
-		ingredients: Object,
+		headline: String,
+		items: Object,
 	},
 };
 </script>
