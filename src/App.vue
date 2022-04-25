@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<h1>Rezepte</h1>
-		<h2>ohne branchen</h2>
 		<input
 			type="button"
 			class="mobile-show nav-hide-button"
