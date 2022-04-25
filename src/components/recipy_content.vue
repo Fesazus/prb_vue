@@ -41,39 +41,10 @@ export default {
 	components: {},
 
 	data() {
-		return {
-			amount: "6 Portionen",
-			instructions: [
-				[
-					"Zubereitung",
-					[
-						"Zwiebeln schneiden",
-						"Paprika in 1 cm lange Streifen schneiden",
-						"Mit Öl in einem Topf anbraten",
-						"1EL Tomaten- und Paprikamark dazugeben und mitbraten",
-						"Okraschoten dazugeben",
-						"Topfinhalt mit Wasser bedecken",
-						"Mit Salz, schwarzem Pfeffer und geschroteter Chili abschmecken",
-						"Für 30-40 min köcheln",
-						"wahlweise Bulgur dazu",
-					],
-				],
-				[
-					"Alternative für Okraschoten aus dem Glas",
-					[
-						"4 Gläßer eingelegte Okraschoten",
-						"Flüssigkeit absieben",
-						"Tomaten entsorgen",
-						"Okraschoten mit Wasser ausspülen",
-						"Zusätzlich mit 1 TL Zucker würzen",
-					],
-				],
-				[
-					"Alternative zu Okraschoten",
-					["6 mittelgroße Kartoffeln", "in kleine Würfel schneiden"],
-				],
-			],
-		};
+		return {};
+	},
+	props: {
+		amount: String,
 	},
 };
 </script>
