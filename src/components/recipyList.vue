@@ -1,11 +1,7 @@
 <template>
 	<div class="nav-ul">
 		<recipyListCategory></recipyListCategory>
-		<caption>
-			{{
-				category
-			}}
-		</caption>
+		<h3>{{ title }}</h3>
 		<ul>
 			<li>
 				<a class="navoption" href="sushi.html"> {{ title }} </a>
@@ -27,9 +23,7 @@ export default {
 		recipyListCategory,
 	},
 	data() {
-		return {
-			category: "Aramäisch",
-		};
+		return {};
 	},
 	props: {
 		title: String,

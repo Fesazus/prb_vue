@@ -12,24 +12,16 @@
 			<div class="search">
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
-			<recipyList title="Paprika-Eintopf (Bamja)"></recipyList>
+			<recipyList :title="title"></recipyList>
 		</div>
 		<div class="wrapper">
 			<div id="container_recipy">
 				<img :src="Image.url" />
 				<h2>{{ title }}</h2>
-				<div class="right boxed">
-					<h3>Einkaufszeddele</h3>
-					<ul>
-						<li
-							v-for="(ingredient, index) in ingredients"
-							:key="index"
-						>
-							{{ ingredient }}
-						</li>
-					</ul>
-				</div>
-				<recipyContainer :amount="amount"></recipyContainer>
+				<recipyContainer
+					:amount="amount"
+					:ingredients="ingredients"
+				></recipyContainer>
 			</div>
 		</div>
 	</div>

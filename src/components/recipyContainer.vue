@@ -1,5 +1,13 @@
 <template>
 	<div>
+		<div class="right boxed">
+			<h3>Einkaufszeddele</h3>
+			<ul>
+				<li v-for="(ingredient, index) in ingredients" :key="index">
+					{{ ingredient }}
+				</li>
+			</ul>
+		</div>
 		<div class="left">
 			<listWithHeadline></listWithHeadline>
 			<shoppingItems></shoppingItems>
@@ -51,6 +59,7 @@ export default {
 	},
 	props: {
 		amount: String,
+		ingredients: Object,
 	},
 };
 </script>

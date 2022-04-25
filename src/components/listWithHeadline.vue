@@ -5,6 +5,10 @@
 <script>
 export default {
 	name: "listWithHeadline",
+	data() {
+		return {};
+	},
+	props: {},
 };
 </script>
 
