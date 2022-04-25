@@ -8,10 +8,11 @@
 			value="Navigation"
 		/>
 		<div class="nav mobile-hide">
+			<searchInRecipyList></searchInRecipyList>
 			<div class="search">
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
-			<main_category title="Paprika-Eintopf (Bamja)"></main_category>
+			<recipyList title="Paprika-Eintopf (Bamja)"></recipyList>
 		</div>
 		<div class="wrapper">
 			<div id="container_recipy">
@@ -28,7 +29,7 @@
 						</li>
 					</ul>
 				</div>
-				<recipy_content :amount="amount"></recipy_content>
+				<recipyContainer :amount="amount"></recipyContainer>
 			</div>
 		</div>
 	</div>
@@ -38,15 +39,18 @@
 
 // import imageRecipy from "./assets/img/Okraschoteneintopf.jpg";
 
-import main_category from "./components/main_category.vue";
-import recipy_content from "./components/recipy_content.vue";
+import recipyList from "./components/recipyList.vue";
+import recipyContainer from "./components/recipyContainer.vue";
+import searchInRecipyList from "./components/searchInRecipyList.vue";
+
 import Parse from "parse/dist/parse.min.js";
 
 export default {
 	name: "App",
 	components: {
-		main_category,
-		recipy_content,
+		recipyList,
+		recipyContainer,
+		searchInRecipyList,
 	},
 	data() {
 		return {

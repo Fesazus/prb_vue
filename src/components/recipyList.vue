@@ -1,5 +1,6 @@
 <template>
 	<div class="nav-ul">
+		<recipyListCategory></recipyListCategory>
 		<caption>
 			{{
 				category
@@ -19,9 +20,12 @@
 </template>
 
 <script>
+import recipyListCategory from "./recipyListCategory.vue";
 export default {
-	name: "recipy_content",
-	components: {},
+	name: "recipyList",
+	components: {
+		recipyListCategory,
+	},
 	data() {
 		return {
 			category: "Aramäisch",

@@ -1,6 +1,8 @@
 <template>
 	<div>
 		<div class="left">
+			<listWithHeadline></listWithHeadline>
+			<shoppingItems></shoppingItems>
 			<p>{{ amount }}</p>
 
 			<h3>Zubereitung</h3>
@@ -36,10 +38,14 @@
 </template>
 
 <script>
+import listWithHeadline from "./listWithHeadline.vue";
+import shoppingItems from "./shoppingItems.vue";
 export default {
-	name: "recipy_content",
-	components: {},
-
+	name: "recipyContainer",
+	components: {
+		listWithHeadline,
+		shoppingItems,
+	},
 	data() {
 		return {};
 	},
