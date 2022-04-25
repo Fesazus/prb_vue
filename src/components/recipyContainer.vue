@@ -1,16 +1,8 @@
 <template>
 	<div>
-		<div class="right boxed">
-			<h3>Einkaufszeddele</h3>
-			<ul>
-				<li v-for="(ingredient, index) in ingredients" :key="index">
-					{{ ingredient }}
-				</li>
-			</ul>
-		</div>
+		<shoppingItems :ingredients="ingredients"></shoppingItems>
 		<div class="left">
 			<listWithHeadline></listWithHeadline>
-			<shoppingItems></shoppingItems>
 			<p>{{ amount }}</p>
 
 			<h3>Zubereitung</h3>
