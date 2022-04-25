@@ -1,5 +1,8 @@
 <template>
-	<recipyListCategory :title="title"></recipyListCategory>
+	<recipyListCategory
+		:title="title"
+		:categoryItems="categoryItems"
+	></recipyListCategory>
 </template>
 
 <script>
@@ -14,6 +17,7 @@ export default {
 	},
 	props: {
 		title: String,
+		categoryItems: Object,
 	},
 };
 </script>

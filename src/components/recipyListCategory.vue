@@ -1,19 +1,17 @@
 <template>
 	<div>
 		<div class="nav-ul">
-			<h3>{{ title }}</h3>
+			<!-- 			<h3>{{ title }}</h3>
 			<ul>
 				<li>
 					<a class="navoption" href="sushi.html"> {{ title }} </a>
 				</li>
-				<li>
-					<a class="navoption" href="teriyaki-nudeln.html">
-						Teriyaki Nudeln
-					</a>
-				</li>
-			</ul>
+			</ul> -->
+			<listWithHeadline
+				:headline="title"
+				:items="categoryItems"
+			></listWithHeadline>
 		</div>
-		<listWithHeadline></listWithHeadline>
 	</div>
 </template>
 
@@ -26,6 +24,7 @@ export default {
 	},
 	props: {
 		title: String,
+		categoryItems: Object,
 	},
 };
 </script>

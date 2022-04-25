@@ -12,7 +12,10 @@
 			<div class="search">
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
-			<recipyList :title="title"></recipyList>
+			<recipyList
+				:title="title"
+				:categoryItems="categoryItems"
+			></recipyList>
 		</div>
 		<div class="wrapper">
 			<div id="container_recipy">
@@ -93,6 +96,7 @@ export default {
 					["6 mittelgroße Kartoffeln", "in kleine Würfel schneiden"],
 				],
 			],
+			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
 		};
 	},
 	mounted() {
