@@ -31,7 +31,9 @@ export default {
 	},
 	computed: {
 		recipyNameEncoded() {
+			// console.log(this.title);
 			let titleEncoded = encodeURIComponent(this.title);
+			// console.log(titleEncoded);
 			let urlRecipy = "?recipy=" + titleEncoded;
 			return urlRecipy;
 		},
