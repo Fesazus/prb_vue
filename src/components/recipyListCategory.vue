@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<div class="nav-ul">
-			<!-- 			<h3>{{ title }}</h3>
+			<h3>{{ title }}</h3>
 			<ul>
 				<li>
-					<a class="navoption" href="sushi.html"> {{ title }} </a>
+					<a class="navoption" :href="urlRecipy"> {{ title }} </a>
 				</li>
-			</ul> -->
+			</ul>
 			<listWithHeadline
 				:headline="title"
 				:items="categoryItems"
@@ -26,7 +26,19 @@ export default {
 		title: String,
 		categoryItems: Object,
 	},
+	data() {
+		return {};
+	},
+	computed: {
+		recipyNameEncoded() {
+			// let titleEncoded = encodeURIComponent(this.title);
+			let titleEncoded = "test";
+			let urlRecipy = "?recipy=" + titleEncoded;
+			return urlRecipy;
+		},
+	},
 };
+// console.log(encodeURIComponent);
 </script>
 
 <style>
