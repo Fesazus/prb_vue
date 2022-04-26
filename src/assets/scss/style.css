@@ -179,10 +179,9 @@ h3 {
   margin: 4mm 10mm 0 0;
 }
 
-.right h3 {
-  padding: 0 5mm 0 5mm;
-}
-
+/* .right h3 {
+     padding: 0 5mm 0 5mm;
+} */
 .boxed {
   border: 1px solid #ffffe6;
   box-shadow: 5px 5px 10px #bababa;
