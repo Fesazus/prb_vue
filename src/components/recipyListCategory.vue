@@ -4,7 +4,9 @@
 			<h3>{{ title }}</h3>
 			<ul>
 				<li>
-					<a class="navoption" :href="urlRecipy"> {{ title }} </a>
+					<a class="navoption" :href="recipyNameEncoded">
+						{{ title }}
+					</a>
 				</li>
 			</ul>
 			<listWithHeadline

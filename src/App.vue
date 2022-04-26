@@ -101,13 +101,12 @@ export default {
 	},
 	mounted() {
 		// Datenbank
-		/* 		let Script = document.createElement("script");
+		let Script = document.createElement("script");
 		Script.setAttribute(
 			"src",
 			"https://npmcdn.com/parse/dist/parse.min.js"
 		);
-		document.head.appendChild(Script); */
-
+		document.head.appendChild(Script);
 		// Initialize Parse
 		Parse.initialize(
 			"ACZFwLfcjciL0G4bgtGSGloBIuXyMYucSBFrp4Er",
@@ -115,10 +114,8 @@ export default {
 		); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 		Parse.serverURL = "https://parseapi.back4app.com/";
 		let recipyTable = Parse.Object.extend("Recipy");
-
 		/* ##### Test #### */
-
-		/* 		let query = new Parse.Query(recipyTable);
+		let query = new Parse.Query(recipyTable);
 		query.equalTo("Title", "BBQ");
 		query
 			.first()
@@ -140,8 +137,7 @@ export default {
 			})
 			.catch(function (error) {
 				console.log("Error: " + error.code + " " + error.message);
-			}); */
-
+			});
 		/* 		let queryAll = new Parse.Query(recipyTable);
 		queryAll
 			.findAll()
