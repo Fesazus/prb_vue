@@ -16,6 +16,7 @@
 			<recipyList
 				:title="title"
 				:categoryItems="categoryItems"
+				:recipyId="recipyId"
 			></recipyList>
 		</div>
 		<div class="wrapper">
@@ -98,7 +99,7 @@ export default {
 				],
 			],
 			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
-			id: "X8689sdnifqp",
+			recipyId: "X8689sdnifqp",
 		};
 	},
 };

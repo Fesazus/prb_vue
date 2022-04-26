@@ -3,8 +3,12 @@
 		<div class="nav-ul">
 			<h3>{{ title }}</h3>
 			<ul>
-				<li>
-					<a class="navoption" :href="recipyNameEncoded">
+				<li v-for="(categoryItem, index) in categoryItems" :key="index">
+					<a
+						class="navoption"
+						:href="recipyNameEncoded"
+						:id="recipyId"
+					>
 						{{ title }}
 					</a>
 				</li>
@@ -20,20 +24,19 @@ export default {
 	props: {
 		title: String,
 		categoryItems: Object,
+		recipyId: String,
 	},
 	data() {
 		return {};
 	},
 	computed: {
 		recipyNameEncoded() {
-			// let titleEncoded = encodeURIComponent(this.title);
-			let titleEncoded = "test";
+			let titleEncoded = encodeURIComponent(this.title);
 			let urlRecipy = "?recipy=" + titleEncoded;
 			return urlRecipy;
 		},
 	},
 };
-// console.log(encodeURIComponent);
 </script>
 
 <style>
