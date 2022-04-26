@@ -9,21 +9,14 @@
 					</a>
 				</li>
 			</ul>
-			<listWithHeadline
-				:headline="title"
-				:items="categoryItems"
-			></listWithHeadline>
 		</div>
 	</div>
 </template>
 
 <script>
-import listWithHeadline from "./listWithHeadline.vue";
 export default {
 	name: "recipyListCategory",
-	components: {
-		listWithHeadline,
-	},
+	components: {},
 	props: {
 		title: String,
 		categoryItems: Object,

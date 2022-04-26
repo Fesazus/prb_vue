@@ -98,6 +98,7 @@ export default {
 				],
 			],
 			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
+			id: "X8689sdnifqp",
 		};
 	},
 };
