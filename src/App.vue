@@ -41,7 +41,7 @@ import recipyList from "./components/recipyList.vue";
 import recipyContainer from "./components/recipyContainer.vue";
 import searchInRecipyList from "./components/searchInRecipyList.vue";
 import dataBase from "./components/dataBase.vue";
-// import Parse from "parse/dist/parse.min.js";
+import Parse from "parse/dist/parse.min.js";
 
 export default {
 	name: "App",
@@ -101,11 +101,13 @@ export default {
 			],
 			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
 			recipyId: "X8689sdnifqp",
+			recipies: [],
 		};
 	},
 	methods: {
-		getTitle() {
-			// let recipyTable = this.database;
+		getAll() {
+			let recipyTable = this.dataBase;
+			console.log(recipyTable);
 			/* ##### Test #### */
 			/* 			let query = new Parse.Query(recipyTable);
 			query.equalTo("Title", "BBQ");
@@ -130,14 +132,47 @@ export default {
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
 				}); */
-			/* 			let queryAll = new Parse.Query(recipyTable);
+			let queryAll = new Parse.Query(recipyTable);
 			queryAll
 				.findAll()
-				.then(function (recipies) {})
+				.then((recipies) => {
+					this.recipies = recipies;
+					console.log(recipies);
+				})
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
-				}); */
+				});
 		},
+		getAllTest() {
+			// Datenbank
+			let Script = document.createElement("script");
+			Script.setAttribute(
+				"src",
+				"https://npmcdn.com/parse/dist/parse.min.js"
+			);
+			document.head.appendChild(Script);
+			// Initialize Parse
+			Parse.initialize(
+				"ACZFwLfcjciL0G4bgtGSGloBIuXyMYucSBFrp4Er",
+				"ALxepfxOexSgKIiQHlFOV0YSJ4EKxiyRIPHC8ErH"
+			); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+			Parse.serverURL = "https://parseapi.back4app.com/";
+			let recipyTable = Parse.Object.extend("Recipy");
+			let queryAll = new Parse.Query(recipyTable);
+			queryAll
+				.findAll()
+				.then((recipies) => {
+					console.log(recipies);
+					console.log(this);
+					this.recipies = recipies;
+				})
+				.catch(function (error) {
+					console.log("Error: " + error.code + " " + error.message);
+				});
+		},
+	},
+	created() {
+		this.getAllTest();
 	},
 };
 </script>
