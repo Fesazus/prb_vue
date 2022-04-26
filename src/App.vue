@@ -118,7 +118,7 @@ export default {
 
 		/* ##### Test #### */
 
-		let query = new Parse.Query(recipyTable);
+		/* 		let query = new Parse.Query(recipyTable);
 		query.equalTo("Title", "BBQ");
 		query
 			.first()
@@ -140,7 +140,15 @@ export default {
 			})
 			.catch(function (error) {
 				console.log("Error: " + error.code + " " + error.message);
-			});
+			}); */
+
+		/* 		let queryAll = new Parse.Query(recipyTable);
+		queryAll
+			.findAll()
+			.then(function (recipies) {})
+			.catch(function (error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}); */
 	},
 };
 </script>
