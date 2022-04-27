@@ -1,6 +1,7 @@
 body {
   font-size: 0.8rem;
-  font-family: "universlt55", Verdana, serif;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 600;
   -webkit-print-color-adjust: exact;
   width: 100%;
 }
@@ -148,9 +149,13 @@ h3 {
   src: url(../fonts/agilohandwriting.ttf) format("truetype");
 }
 
+/* open-sans-600 - latin */
 @font-face {
-  font-family: "universlt55";
-  src: url(../fonts/universltstd.otf) format("opentype");
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/open-sans-v28-latin-600.woff2") format("woff2"), url("../fonts/open-sans-v28-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 .left,
