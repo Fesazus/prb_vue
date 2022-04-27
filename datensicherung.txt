@@ -1,0 +1,26 @@
+		removeDoubledCategorys(recipyListDataTest) {
+			let categoryList = [];
+			console.log("categoryListdavor");
+			console.log(categoryList);
+			// console.log("categoryList[0]davor");
+			// console.log(categoryList[0]);
+			// console.log("recipyListDataTest removeDoubledCategorys");
+			// console.log(recipyListDataTest);
+			for (let index = 0; index < recipyListDataTest.length; index++) {
+				// console.log("recipyListDataTest[index]");
+				// console.log(recipyListDataTest[index]);
+				// console.log("recipyListDataTest[index][2]");
+				// console.log(recipyListDataTest[index][2]);
+				if (recipyListDataTest[index][2] === categoryList[0]) {
+					console.log("ist gleich");
+				} else {
+					console.log("recipyListDataTest[index][2]");
+					console.log(recipyListDataTest[index][2]);
+					categoryList.push(recipyListDataTest[index][2]);
+				}
+				console.log("categoryListdanach");
+				console.log(categoryList);
+				// console.log("categoryList[0]danach");
+				// console.log(categoryList[0]);
+			}
+		},

@@ -160,51 +160,54 @@ export default {
 				(item) => item.attributes.Title
 			); */
 			const recipyListData = this.recipies.map((item) => {
-				console.log(recipyListData);
 				let list = [];
 				list.push(item.id);
 				list.push(item.attributes.Category);
 				list.push(item.attributes.Title);
 				return list;
 			});
-			/* 			let recipyListDataTest = [
+			// console.log(recipyListData);
+			let recipyListDataTest = [
 				["ziTEZm3Qlu", "Beilagen", "Mu-Err"],
 				["zqn5fGH9Jx", "Punee", "Galettes"],
 				["zqn5GH9Jx", "unee", "Galettes"],
-			]; */
-			// this.removeDoubledCategorys(recipyListDataTest);
+			];
+			this.removeDoubledCategorys(recipyListDataTest);
 		},
-		/* 		removeDoubledCategorys(recipyListDataTest) {
+		removeDoubledCategorys(recipyListDataTest) {
 			let categoryList = [];
 			console.log("categoryListdavor");
 			console.log(categoryList);
-			console.log("categoryList[0]davor");
-			console.log(categoryList[0]);
-			console.log("recipyListDataTest removeDoubledCategorys");
-			console.log(recipyListDataTest);
+			// console.log("categoryList[0]davor");
+			// console.log(categoryList[0]);
+			// console.log("recipyListDataTest removeDoubledCategorys");
+			// console.log(recipyListDataTest);
 			for (let index = 0; index < recipyListDataTest.length; index++) {
 				// console.log("recipyListDataTest[index]");
 				// console.log(recipyListDataTest[index]);
+				// console.log("recipyListDataTest[index][2]");
 				// console.log(recipyListDataTest[index][2]);
 				if (recipyListDataTest[index][2] === categoryList[0]) {
 					console.log("ist gleich");
 				} else {
-					categoryList.push([
-						recipyListDataTest[index][2],
-						recipyListDataTest,
-					]);
+					console.log("recipyListDataTest[index][2]");
+					console.log(recipyListDataTest[index][2]);
+					categoryList.push(recipyListDataTest[index][2]);
 				}
 				console.log("categoryListdanach");
 				console.log(categoryList);
-				console.log("categoryList[0]danach");
-				console.log(categoryList[0]);
+				// console.log("categoryList[0]danach");
+				// console.log(categoryList[0]);
 			}
-		}, */
+		},
 	},
 	created() {
 		this.getAllRecipies();
 		/* this.getRecipyListData(); */
 	},
+	/* 	mounted() {
+		debugger;
+	}, */
 	computed: {
 		/* 			sortAlphabetical(a, b) {
 			let nameA = a.get("Title").toLowerCase();
