@@ -3,7 +3,7 @@
 		<div class="nav-ul">
 			<h3>{{ category }}</h3>
 			<ul>
-				<li v-for="(categoryItem, index) in categoryItems" :key="index">
+				<li v-for="(categoryItem, index) in sortRecipies" :key="index">
 					<a
 						class="navoption"
 						:href="recipyNameEncoded(categoryItem[2])"
@@ -48,6 +48,13 @@ export default {
 		this.$emit("recipy-id", this.recipyId);
 		},
 		*/
+	},
+	computed: {
+		sortRecipies() {
+			return [...this.categoryItems].sort(function (a, b) {
+				return a[2].localeCompare(b[2]);
+			});
+		},
 	},
 };
 </script>
