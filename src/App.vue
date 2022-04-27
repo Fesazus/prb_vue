@@ -151,6 +151,19 @@ export default {
 	created() {
 		this.getAllTest();
 	},
+	computed: {
+		/* 		sortAlphabetical(a, b) {
+			let nameA = a.get("Title").toLowerCase();
+			let nameB = b.get("Title").toLowerCase();
+			if (nameA < nameB) {
+				return -1;
+			}
+			if (nameA > nameB) {
+				return 1;
+			}
+			return 0;
+		}, */
+	},
 };
 </script>
 
