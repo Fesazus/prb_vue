@@ -169,73 +169,60 @@ export default {
 			// console.log(recipyListData);
 			let recipyListDataTest = [
 				["ziTEZm3Qlu", "Beilagen", "Mu-Err"],
-				["zqn5fGH9Jx", "Punee1", "Galettes"],
+				["zqn5fGH9Jx", "Punee", "Galettes"],
 				["zqn5GH9Jx", "unee", "Galettes"],
 			];
 			this.removeDoubledCategorys(recipyListDataTest);
 		},
 		removeDoubledCategorys(recipyListDataTest) {
 			let categoryList = {
-				Galettes: [["zqn5fGH9Jx", "Punee", "Galettes"]],
+				Galettes: ["zqn5fGH9Jx", "Punee", "Galettes"],
 			};
 			// console.log("object keys categoryList");
 			// console.log(Object.keys(categoryList));
-			// let compareKeysWithCategory = function (categoryList) {
-			// ??? Object ist nach Übergabe undefined, davor gehts
-			// console.log("categoryList");
-			// console.log(categoryList);
-			// console.log("object keys categoryList");
-			// console.log(Object.keys(categoryList));
-			// };
-			// compareKeysWithCategory();
+			let compareKeysWithCategory = function (categoryList) {
+				// ??? Object ist nach Übergabe undefined, davor gehts
+				// console.log("categoryList");
+				// console.log(categoryList);
+				// console.log("object keys categoryList");
+				// console.log(Object.keys(categoryList));
+			};
+			compareKeysWithCategory();
 
-			console.log("categoryListdavor");
-			console.log(categoryList);
+			// console.log("categoryListdavor");
+			// console.log(categoryList);
 			// console.log("categoryList[0]davor");
 			// console.log(categoryList[0]);
 			// console.log("recipyListDataTest removeDoubledCategorys");
 			// console.log(recipyListDataTest);
 			for (let index = 0; index < recipyListDataTest.length; index++) {
-				// console.log("object keys categoryList");
-				// console.log(Object.keys(categoryList));
+				console.log("object keys categoryList");
+				console.log(Object.keys(categoryList));
 				// console.log("recipyListDataTest[index]");
 				// console.log(recipyListDataTest[index]);
 				// console.log("recipyListDataTest[index][2]");
 				// console.log(recipyListDataTest[index][2]);
 				// console.log("categoryList.key");
 				// console.log(Object.keys(categoryList));
+				let testVariable = recipyListDataTest[index][2];
 				if (
 					Object.keys(categoryList).includes(
 						recipyListDataTest[index][2]
 					)
 				) {
 					console.log("ist gleich");
-					categoryList[recipyListDataTest[index][2]].push(
-						recipyListDataTest[index]
-					);
-					/* 				let addRecipiesOfSameCategory = function () {
-						let arrayRecipiesOfSameCategory =
-							Object.values(categoryList);
-						// console.log("arrayRecipiesOfSameCategory");
-						// console.log(arrayRecipiesOfSameCategory);
-					}; */
-					//addRecipiesOfSameCategory();
 				} else {
 					console.log("ist unterschiedlich");
-					// ??? hinzufügen von Object key funktioniert nicht
+					// ??? hinzufügen an Object funktioniert nicht
 					// console.log("recipyListDataTest[index][2]");
 					// console.log(recipyListDataTest[index][2]);
 					// categoryList.category = "Test";
-					// categoryList.recipyListDataTest[index][2] = "Test"
-					categoryList[recipyListDataTest[index][2]] = [
-						recipyListDataTest[index],
-					];
 					// let test1 = "test1";
 					// let test2 = "test2";
 					// categoryList.assign(test1, test2);
 				}
-				console.log("categoryListdanach");
-				console.log(categoryList);
+				// console.log("categoryListdanach");
+				// console.log(categoryList);
 				// console.log("categoryList[0]danach");
 				// console.log(categoryList[0]);
 			}
