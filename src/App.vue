@@ -17,6 +17,7 @@
 				:title="title"
 				:categoryItems="categoryItems"
 				:recipyId="recipyId"
+				:category="category"
 			></recipyList>
 		</div>
 		<div class="wrapper">
@@ -61,6 +62,7 @@ export default {
 				url: "https://parsefiles.back4app.com/AJYq67NCkJgwHMq2NQRgjnSQIWkrGiwlu5UUguLP/f8216ab12a33aa8f39a27704ef561960_Image.bin",
 			},
 			title: "Paprika-Eintopf (Bamja)",
+			category: "Aramäisch",
 			ingredients: [
 				"3 Zwiebeln",
 				"3 Paprika",
@@ -103,6 +105,7 @@ export default {
 			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
 			recipyId: "X8689sdnifqp",
 			recipies: [],
+			recipyListData: [],
 		};
 	},
 	methods: {
@@ -120,7 +123,7 @@ export default {
 					console.log("Error: " + error.code + " " + error.message);
 				});
 		},
-		getAllTest() {
+		getAllRecipies() {
 			// Datenbank
 			let Script = document.createElement("script");
 			Script.setAttribute(
@@ -139,20 +142,40 @@ export default {
 			queryAll
 				.findAll()
 				.then((recipies) => {
-					// console.log(recipies);
 					// console.log(this);
 					this.recipies = recipies;
+					console.log(this.recipies);
+					this.getRecipyListData();
 				})
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
 				});
 		},
+		getRecipyListData() {
+			/* 			const recipyId = this.recipies.map((item) => item.id);
+			const recipyCategory = this.recipies.map(
+				(item) => item.attributes.Category
+			);
+			const recipyTitle = this.recipies.map(
+				(item) => item.attributes.Title
+			); */
+			const recipyListData = this.recipies.map((item) => {
+				let list = [];
+				list.push(item.id);
+				list.push(item.attributes.Category);
+				list.push(item.attributes.Title);
+				return list;
+			});
+			console.log("recipyListData");
+			console.log(recipyListData);
+		},
 	},
 	created() {
-		this.getAllTest();
+		this.getAllRecipies();
+		/* this.getRecipyListData(); */
 	},
-	computed: {
-		/* 		sortAlphabetical(a, b) {
+	/* 		computed: {
+			sortAlphabetical(a, b) {
 			let nameA = a.get("Title").toLowerCase();
 			let nameB = b.get("Title").toLowerCase();
 			if (nameA < nameB) {
@@ -162,8 +185,8 @@ export default {
 				return 1;
 			}
 			return 0;
+		},
 		}, */
-	},
 };
 </script>
 

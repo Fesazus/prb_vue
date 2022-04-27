@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="nav-ul">
-			<h3>{{ title }}</h3>
+			<h3>{{ category }}</h3>
 			<ul>
 				<li v-for="(categoryItem, index) in categoryItems" :key="index">
 					<a
@@ -33,6 +33,7 @@ export default {
 		title: String,
 		categoryItems: Object,
 		recipyId: String,
+		category: String,
 	},
 	data() {
 		return {};

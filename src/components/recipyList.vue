@@ -3,6 +3,7 @@
 		<recipyListCategory
 			:title="title"
 			:categoryItems="categoryItems"
+			:category="category"
 		></recipyListCategory>
 		<!-- 		@recipy-id="sendRecipyId" -->
 	</div>
@@ -21,6 +22,7 @@ export default {
 	props: {
 		title: String,
 		categoryItems: Object,
+		category: String,
 	},
 };
 </script>
