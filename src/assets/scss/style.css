@@ -62,7 +62,7 @@ h2 {
   color: white;
   text-align: center;
   text-transform: uppercase;
-  padding: 10mm 0 9mm 0;
+  padding: 1rem 0 0.9rem 0;
   font-size: 2.5rem;
 }
 
@@ -79,6 +79,8 @@ h2 {
 h3 {
   color: #008000;
   font-size: 1.2rem;
+  margin: 0;
+  padding: 1rem 0 0 0;
 }
 
 .platzhalter {
@@ -119,12 +121,16 @@ h3 {
   background-color: #ffffe6;
 }
 
+.nav-ul h3 {
+  padding: 0;
+}
+
 .nav-ul li {
   padding: 8px 0 0 0;
 }
 
 .nav-ul li:first-of-type {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .left ul {

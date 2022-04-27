@@ -1,9 +1,11 @@
 <template>
-	<recipyListCategory
-		:title="title"
-		:categoryItems="categoryItems"
-	></recipyListCategory>
-	<!-- 		@recipy-id="sendRecipyId" -->
+	<div>
+		<recipyListCategory
+			:title="title"
+			:categoryItems="categoryItems"
+		></recipyListCategory>
+		<!-- 		@recipy-id="sendRecipyId" -->
+	</div>
 </template>
 
 <script>
