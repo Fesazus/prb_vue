@@ -27,6 +27,7 @@
 					:amount="amount"
 					:ingredients="ingredients"
 					:instructions="instructions"
+					:recipyId="recipyId"
 				></recipyContainer>
 			</div>
 		</div>
@@ -108,30 +109,6 @@ export default {
 		getAll() {
 			let recipyTable = this.dataBase;
 			console.log(recipyTable);
-			/* ##### Test #### */
-			/* 			let query = new Parse.Query(recipyTable);
-			query.equalTo("Title", "BBQ");
-			query
-				.first()
-				.then(function (recipy) {
-					console.log("recipy");
-					console.log(recipy);
-					console.log(typeof recipy);
-					console.log(recipy instanceof Array);
-					if (recipy) {
-						console.log(
-							"Pet found successful with name: " +
-								recipy.get("Title") +
-								" and age: " +
-								recipy.get("Category")
-						);
-					} else {
-						console.log("Nothing found, please try again");
-					}
-				})
-				.catch(function (error) {
-					console.log("Error: " + error.code + " " + error.message);
-				}); */
 			let queryAll = new Parse.Query(recipyTable);
 			queryAll
 				.findAll()
@@ -162,8 +139,8 @@ export default {
 			queryAll
 				.findAll()
 				.then((recipies) => {
-					console.log(recipies);
-					console.log(this);
+					// console.log(recipies);
+					// console.log(this);
 					this.recipies = recipies;
 				})
 				.catch(function (error) {

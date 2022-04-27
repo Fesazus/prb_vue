@@ -3,6 +3,7 @@
 		:title="title"
 		:categoryItems="categoryItems"
 	></recipyListCategory>
+	<!-- 		@recipy-id="sendRecipyId" -->
 </template>
 
 <script>

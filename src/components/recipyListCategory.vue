@@ -11,6 +11,14 @@
 					>
 						{{ title }}
 					</a>
+					<!-- 					<a
+						@click="sendRecipyId"
+						class="navoption"
+						:href="recipyNameEncoded"
+						:id="recipyId"
+					>
+						{{ title }}
+					</a> -->
 				</li>
 			</ul>
 		</div>
@@ -37,6 +45,10 @@ export default {
 			let urlRecipy = "?recipy=" + titleEncoded;
 			return urlRecipy;
 		},
+		/* 		sendRecipyId() {
+		this.$emit("recipy-id", this.recipyId);
+		},
+		*/
 	},
 };
 </script>
