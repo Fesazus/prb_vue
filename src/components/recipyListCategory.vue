@@ -6,10 +6,10 @@
 				<li v-for="(categoryItem, index) in categoryItems" :key="index">
 					<a
 						class="navoption"
-						:href="recipyNameEncoded"
-						:id="recipyId"
+						:href="recipyNameEncoded(categoryItem[2])"
+						:id="categoryItem[0]"
 					>
-						{{ title }}
+						{{ categoryItem[2] }}
 					</a>
 					<!-- 					<a
 						@click="sendRecipyId"
@@ -30,18 +30,16 @@ export default {
 	name: "recipyListCategory",
 	components: {},
 	props: {
-		title: String,
 		categoryItems: Object,
-		recipyId: String,
 		category: String,
 	},
 	data() {
 		return {};
 	},
-	computed: {
-		recipyNameEncoded() {
+	methods: {
+		recipyNameEncoded(title) {
 			// console.log(this.title);
-			let titleEncoded = encodeURIComponent(this.title);
+			let titleEncoded = encodeURIComponent(title);
 			// console.log(titleEncoded);
 			let urlRecipy = "?recipy=" + titleEncoded;
 			return urlRecipy;

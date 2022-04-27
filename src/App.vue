@@ -14,10 +14,9 @@
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
 			<recipyList
-				:title="title"
 				:categoryItems="categoryItems"
 				:recipyId="recipyId"
-				:category="category"
+				:recipyListData="recipyListData"
 			></recipyList>
 		</div>
 		<div class="wrapper">
@@ -62,7 +61,6 @@ export default {
 				url: "https://parsefiles.back4app.com/AJYq67NCkJgwHMq2NQRgjnSQIWkrGiwlu5UUguLP/f8216ab12a33aa8f39a27704ef561960_Image.bin",
 			},
 			title: "Paprika-Eintopf (Bamja)",
-			category: "Aramäisch",
 			ingredients: [
 				"3 Zwiebeln",
 				"3 Paprika",
@@ -167,35 +165,24 @@ export default {
 				return list;
 			});
 			// console.log(recipyListData);
-			let recipyListDataTest = [
+			/* 			let recipyListDataTest = [
 				["ziTEZm3Qlu", "Beilagen", "Mu-Err"],
 				["zqn5fGH9Jx", "Punee1", "Galettes"],
 				["zqn5GH9Jx", "unee", "Galettes"],
-			];
-			this.removeDoubledCategorys(recipyListDataTest);
+			]; */
+			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
-		removeDoubledCategorys(recipyListDataTest) {
-			let categoryList = {
-				Galettes: [["zqn5fGH9Jx", "Punee", "Galettes"]],
-			};
+		removeDoubledCategorys(recipyListData) {
+			let categoryList = {};
 			// console.log("object keys categoryList");
 			// console.log(Object.keys(categoryList));
-			// let compareKeysWithCategory = function (categoryList) {
-			// ??? Object ist nach Übergabe undefined, davor gehts
-			// console.log("categoryList");
-			// console.log(categoryList);
-			// console.log("object keys categoryList");
-			// console.log(Object.keys(categoryList));
-			// };
-			// compareKeysWithCategory();
-
 			console.log("categoryListdavor");
 			console.log(categoryList);
 			// console.log("categoryList[0]davor");
 			// console.log(categoryList[0]);
 			// console.log("recipyListDataTest removeDoubledCategorys");
 			// console.log(recipyListDataTest);
-			for (let index = 0; index < recipyListDataTest.length; index++) {
+			for (let index = 0; index < recipyListData.length; index++) {
 				// console.log("object keys categoryList");
 				// console.log(Object.keys(categoryList));
 				// console.log("recipyListDataTest[index]");
@@ -205,13 +192,11 @@ export default {
 				// console.log("categoryList.key");
 				// console.log(Object.keys(categoryList));
 				if (
-					Object.keys(categoryList).includes(
-						recipyListDataTest[index][2]
-					)
+					Object.keys(categoryList).includes(recipyListData[index][1])
 				) {
 					console.log("ist gleich");
-					categoryList[recipyListDataTest[index][2]].push(
-						recipyListDataTest[index]
+					categoryList[recipyListData[index][1]].push(
+						recipyListData[index]
 					);
 					/* 				let addRecipiesOfSameCategory = function () {
 						let arrayRecipiesOfSameCategory =
@@ -227,8 +212,8 @@ export default {
 					// console.log(recipyListDataTest[index][2]);
 					// categoryList.category = "Test";
 					// categoryList.recipyListDataTest[index][2] = "Test"
-					categoryList[recipyListDataTest[index][2]] = [
-						recipyListDataTest[index],
+					categoryList[recipyListData[index][1]] = [
+						recipyListData[index],
 					];
 					// let test1 = "test1";
 					// let test2 = "test2";
@@ -239,6 +224,7 @@ export default {
 				// console.log("categoryList[0]danach");
 				// console.log(categoryList[0]);
 			}
+			return categoryList;
 		},
 	},
 	created() {
@@ -265,5 +251,5 @@ export default {
 </script>
 
 <style>
-@import "./assets/scss/style.min.css";
+@import "./assets/css/style.min.css";
 </style>

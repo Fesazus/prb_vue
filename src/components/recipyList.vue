@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<recipyListCategory
-			:title="title"
+			v-for="(categoryItems, category) in recipyListData"
+			:key="category"
 			:categoryItems="categoryItems"
 			:category="category"
 		></recipyListCategory>
@@ -20,9 +21,8 @@ export default {
 		return {};
 	},
 	props: {
-		title: String,
 		categoryItems: Object,
-		category: String,
+		recipyListData: Object,
 	},
 };
 </script>
