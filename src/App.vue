@@ -150,13 +150,6 @@ export default {
 				});
 		},
 		getRecipyListData() {
-			/* 			const recipyId = this.recipies.map((item) => item.id);
-			const recipyCategory = this.recipies.map(
-				(item) => item.attributes.Category
-			);
-			const recipyTitle = this.recipies.map(
-				(item) => item.attributes.Title
-			); */
 			const recipyListData = this.recipies.map((item) => {
 				let list = [];
 				list.push(item.id);
@@ -164,33 +157,13 @@ export default {
 				list.push(item.attributes.Title);
 				return list;
 			});
-			// console.log(recipyListData);
-			/* 			let recipyListDataTest = [
-				["ziTEZm3Qlu", "Beilagen", "Mu-Err"],
-				["zqn5fGH9Jx", "Punee1", "Galettes"],
-				["zqn5GH9Jx", "unee", "Galettes"],
-			]; */
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
 		removeDoubledCategorys(recipyListData) {
 			let categoryList = {};
-			// console.log("object keys categoryList");
-			// console.log(Object.keys(categoryList));
 			console.log("categoryListdavor");
 			console.log(categoryList);
-			// console.log("categoryList[0]davor");
-			// console.log(categoryList[0]);
-			// console.log("recipyListDataTest removeDoubledCategorys");
-			// console.log(recipyListDataTest);
 			for (let index = 0; index < recipyListData.length; index++) {
-				// console.log("object keys categoryList");
-				// console.log(Object.keys(categoryList));
-				// console.log("recipyListDataTest[index]");
-				// console.log(recipyListDataTest[index]);
-				// console.log("recipyListDataTest[index][2]");
-				// console.log(recipyListDataTest[index][2]);
-				// console.log("categoryList.key");
-				// console.log(Object.keys(categoryList));
 				if (
 					Object.keys(categoryList).includes(recipyListData[index][1])
 				) {
@@ -198,55 +171,25 @@ export default {
 					categoryList[recipyListData[index][1]].push(
 						recipyListData[index]
 					);
-					/* 				let addRecipiesOfSameCategory = function () {
-						let arrayRecipiesOfSameCategory =
-							Object.values(categoryList);
-						// console.log("arrayRecipiesOfSameCategory");
-						// console.log(arrayRecipiesOfSameCategory);
-					}; */
-					//addRecipiesOfSameCategory();
 				} else {
 					console.log("ist unterschiedlich");
-					// ??? hinzufügen von Object key funktioniert nicht
-					// console.log("recipyListDataTest[index][2]");
-					// console.log(recipyListDataTest[index][2]);
-					// categoryList.category = "Test";
-					// categoryList.recipyListDataTest[index][2] = "Test"
 					categoryList[recipyListData[index][1]] = [
 						recipyListData[index],
 					];
-					// let test1 = "test1";
-					// let test2 = "test2";
-					// categoryList.assign(test1, test2);
 				}
 				console.log("categoryListdanach");
 				console.log(categoryList);
-				// console.log("categoryList[0]danach");
-				// console.log(categoryList[0]);
 			}
 			return categoryList;
 		},
 	},
 	created() {
 		this.getAllRecipies();
-		/* this.getRecipyListData(); */
 	},
 	/* 	mounted() {
 		debugger;
 	}, */
-	computed: {
-		/* 			sortAlphabetical(a, b) {
-			let nameA = a.get("Title").toLowerCase();
-			let nameB = b.get("Title").toLowerCase();
-			if (nameA < nameB) {
-				return -1;
-			}
-			if (nameA > nameB) {
-				return 1;
-			}
-			return 0;
-		}, */
-	},
+	computed: {},
 };
 </script>
 
