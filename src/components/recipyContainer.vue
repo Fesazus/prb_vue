@@ -31,6 +31,10 @@ export default {
 	data() {
 		return {};
 	},
+	/* 	updated() {
+		console.log("this.instructions");
+		console.log(this.instructions);
+	}, */
 	props: {
 		amount: String,
 		ingredients: Object,
