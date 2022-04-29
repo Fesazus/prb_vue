@@ -14,9 +14,8 @@
 				<input type="text" id="searchbox" placeholder="Suche" />
 			</div>
 			<recipyList
-				:categoryItems="categoryItems"
-				:recipyId="recipyId"
 				:recipyListData="recipyListData"
+				@send-currentRecipyId="getRecipiesId"
 			></recipyList>
 		</div>
 		<div class="wrapper">
@@ -27,7 +26,6 @@
 					:amount="amount"
 					:ingredients="ingredients"
 					:instructions="instructions"
-					:recipyId="recipyId"
 				></recipyContainer>
 			</div>
 		</div>
@@ -60,15 +58,8 @@ export default {
 				name: "f8216ab12a33aa8f39a27704ef561960_Image.bin",
 				url: "https://parsefiles.back4app.com/AJYq67NCkJgwHMq2NQRgjnSQIWkrGiwlu5UUguLP/f8216ab12a33aa8f39a27704ef561960_Image.bin",
 			},
-			title: "Paprika-Eintopf (Bamja)",
-			ingredients: [
-				"3 Zwiebeln",
-				"3 Paprika",
-				"Tomatenmark",
-				"Paprikamark",
-				"3 Beutel gefrorene Okraschoten",
-				"Wahlweise Bulgur als Beilage",
-			],
+			title: "",
+			ingredients: [],
 			amount: "6 Portionen",
 			instructions: [
 				[
@@ -100,8 +91,8 @@ export default {
 					["6 mittelgroße Kartoffeln", "in kleine Würfel schneiden"],
 				],
 			],
-			categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
-			recipyId: "X8689sdnifqp",
+			// categoryItems: ["Paprika-Eintopf (Bamja)", "Baloc"],
+			recipyAppId: 0,
 			recipies: [],
 			recipyListData: [],
 		};
@@ -143,6 +134,7 @@ export default {
 					// console.log(this);
 					this.recipies = recipies;
 					// console.log(this.recipies);
+					console.log(this.recipies.id);
 					this.getRecipyListData();
 				})
 				.catch(function (error) {
@@ -155,32 +147,46 @@ export default {
 				list.push(item.id);
 				list.push(item.attributes.Category);
 				list.push(item.attributes.Title);
+				// console.log(list);
 				return list;
 			});
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
 		removeDoubledCategorys(recipyListData) {
 			let categoryList = {};
-			console.log("categoryListdavor");
-			console.log(categoryList);
+			// console.log("categoryListdavor");
+			// console.log(categoryList);
 			for (let index = 0; index < recipyListData.length; index++) {
 				if (
 					Object.keys(categoryList).includes(recipyListData[index][1])
 				) {
-					console.log("ist gleich");
+					// console.log("ist gleich");
 					categoryList[recipyListData[index][1]].push(
 						recipyListData[index]
 					);
 				} else {
-					console.log("ist unterschiedlich");
+					// console.log("ist unterschiedlich");
 					categoryList[recipyListData[index][1]] = [
 						recipyListData[index],
 					];
 				}
-				console.log("categoryListdanach");
-				console.log(categoryList);
 			}
+			console.log("categoryListdanach");
+			console.log(Array(categoryList));
 			return categoryList;
+		},
+		getRecipiesId(id) {
+			this.recipyAppId = id;
+			const recipyListData = this.recipies.map((item) => {
+				if (item.id === id) {
+					console.log("id gefunden");
+					console.log(item.attributes.Title);
+					this.title = item.attributes.Title;
+					this.ingredients = item.attributes.Ingredients;
+				} else {
+					console.log("id nicht vorhanden");
+				}
+			});
 		},
 	},
 	created() {

@@ -3,22 +3,13 @@
 		<div class="nav-ul">
 			<h3>{{ category }}</h3>
 			<ul>
-				<li v-for="(categoryItem, index) in sortRecipies" :key="index">
-					<a
-						class="navoption"
-						:href="recipyNameEncoded(categoryItem[2])"
-						:id="categoryItem[0]"
-					>
-						{{ categoryItem[2] }}
-					</a>
-					<!-- 					<a
-						@click="sendRecipyId"
-						class="navoption"
-						:href="recipyNameEncoded"
-						:id="recipyId"
-					>
-						{{ title }}
-					</a> -->
+				<li
+					v-for="(categoryItem, index) in sortRecipies"
+					:key="index"
+					:id="categoryItem[0]"
+					@click="sendRecipyId"
+				>
+					{{ categoryItem[2] }}
 				</li>
 			</ul>
 		</div>
@@ -34,7 +25,9 @@ export default {
 		category: String,
 	},
 	data() {
-		return {};
+		return {
+			recipyId: 0,
+		};
 	},
 	methods: {
 		recipyNameEncoded(title) {
@@ -44,16 +37,18 @@ export default {
 			let urlRecipy = "?recipy=" + titleEncoded;
 			return urlRecipy;
 		},
-		/* 		sendRecipyId() {
-		this.$emit("recipy-id", this.recipyId);
+		sendRecipyId(event) {
+			this.$emit("onClick-RecipyId", event.currentTarget.id);
 		},
-		*/
 	},
 	computed: {
 		sortRecipies() {
 			return [...this.categoryItems].sort(function (a, b) {
 				return a[2].localeCompare(b[2]);
 			});
+		},
+		setId() {
+			this.recipyId = categoryItem[0];
 		},
 	},
 };

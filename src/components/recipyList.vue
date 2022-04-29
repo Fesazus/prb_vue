@@ -5,6 +5,7 @@
 			:key="category"
 			:categoryItems="categoryItems"
 			:category="category"
+			@onClick-RecipyId="sendRecipyIdApp"
 		></recipyListCategory>
 		<!-- 		@recipy-id="sendRecipyId" -->
 	</div>
@@ -18,11 +19,21 @@ export default {
 		recipyListCategory,
 	},
 	data() {
-		return {};
+		return {
+			currentRecipyId: null,
+		};
 	},
 	props: {
-		categoryItems: Object,
+		// categoryItems: Object,
 		recipyListData: Object,
+	},
+	methods: {
+		sendRecipyIdApp(Id) {
+			this.currentRecipyId = Id;
+			// console.log("recipyId");
+			// console.log(Id);
+			this.$emit("send-currentRecipyId", this.currentRecipyId);
+		},
 	},
 };
 </script>
