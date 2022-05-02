@@ -1,21 +1,22 @@
 <template>
 	<div>
 		<div class="right boxed">
-			<listWithHeadline
-				:items="ingredients"
-				headline="Einkaufszeddele"
-			></listWithHeadline>
+			<div>
+				<ul>
+					<h3>Einkaufszeddele</h3>
+					<li v-for="(ingredient, index) in ingredients" :key="index">
+						{{ ingredient }}
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import listWithHeadline from "./listWithHeadline.vue";
 export default {
 	name: "shoppingItems",
-	components: {
-		listWithHeadline,
-	},
+	components: {},
 	props: {
 		ingredients: Object,
 	},
