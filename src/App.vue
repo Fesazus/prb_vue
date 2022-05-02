@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<dataBase></dataBase>
-		<h1>Rezepte</h1>
+		<h1 v-if="recipyAppId">Rezept deiner Wahl</h1>
+		<h1 v-else>Rezept-Vorschlag</h1>
 		<input
 			type="button"
 			class="mobile-show nav-hide-button"
@@ -126,11 +127,17 @@ export default {
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
 		getRecipyOfTheDay(recipies) {
-			this.title = this.recipies[0].attributes.Title;
-			this.ingredients = this.recipies[0].attributes.Ingredients;
-			this.amount = this.recipies[0].attributes.Amount;
+			let randomNumber = Math.floor(
+				Math.random() * (this.recipies.length + 1)
+			);
+			console.log("randomNumber");
+			console.log(randomNumber);
+			this.title = this.recipies[randomNumber].attributes.Title;
+			this.ingredients =
+				this.recipies[randomNumber].attributes.Ingredients;
+			this.amount = this.recipies[randomNumber].attributes.Amount;
 			this.instructions = JSON.parse(
-				this.recipies[0].attributes.Instructions
+				this.recipies[randomNumber].attributes.Instructions
 			);
 			if (item.attributes.Image) {
 				this.image = item.attributes.Image._url;
