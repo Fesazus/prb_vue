@@ -105,10 +105,10 @@ export default {
 				.then((recipies) => {
 					// console.log(this);
 					this.recipies = recipies;
-					// console.log("this.recipies.Image");
-					// console.log(this.recipies.Id);
 					// console.log(this.recipies);
+					// console.log(this.recipies[0].attributes.Title);
 					this.getRecipyListData();
+					this.getRecipyOfTheDay(recipies);
 				})
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
@@ -124,6 +124,19 @@ export default {
 				return list;
 			});
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
+		},
+		getRecipyOfTheDay(recipies) {
+			this.title = this.recipies[0].attributes.Title;
+			this.ingredients = this.recipies[0].attributes.Ingredients;
+			this.amount = this.recipies[0].attributes.Amount;
+			this.instructions = JSON.parse(
+				this.recipies[0].attributes.Instructions
+			);
+			if (item.attributes.Image) {
+				this.image = item.attributes.Image._url;
+			} else {
+				this.image = "";
+			}
 		},
 		removeDoubledCategorys(recipyListData) {
 			let categoryList = {};

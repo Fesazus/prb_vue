@@ -7,7 +7,6 @@
 			:category="category"
 			@onClick-RecipyId="sendRecipyIdApp"
 		></recipyListCategory>
-		<!-- 		@recipy-id="sendRecipyId" -->
 	</div>
 </template>
 
