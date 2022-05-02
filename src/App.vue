@@ -227,6 +227,12 @@ export default {
 	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	font-size: 0.8rem;
 	font-family: "Open Sans", Arial, sans-serif;
