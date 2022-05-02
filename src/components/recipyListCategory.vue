@@ -54,5 +54,36 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+li {
+	color: var(--default_text_color);
+	list-style-type: none;
+}
+
+li:hover,
+.current_recipy {
+	color: var(--main_color);
+}
+
+.nav-ul {
+	border: 1px solid var(--background_sub_color);
+	box-shadow: 5px 5px 10px var(--shadow_border_color);
+	border-radius: 10px;
+	color: var(--main_color);
+	padding: 15px 10px 5px 15px;
+	margin: 15px 10px;
+	background-color: var(--background_sub_color);
+}
+
+.nav-ul h3 {
+	padding: 0;
+}
+
+.nav-ul li {
+	padding: 8px 0 0 0;
+}
+
+.nav-ul li:first-of-type {
+	padding-top: 10px;
+}
 </style>

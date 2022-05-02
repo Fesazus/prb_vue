@@ -22,5 +22,22 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+ul {
+	padding: 0 10px 10px 18px;
+	margin: 0;
+	list-style-type: disc;
+}
+
+li {
+	padding-bottom: 5px;
+}
+
+.right {
+	position: relative;
+	float: right;
+	overflow: hidden;
+	width: 33%;
+	margin: 4mm 10mm 0 0;
+}
 </style>

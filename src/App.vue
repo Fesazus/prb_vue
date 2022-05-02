@@ -9,7 +9,7 @@
 			id="navigation-unhide"
 			value="Navigation"
 		/>
-		<div class="nav mobile-hide">
+		<nav class="mobile-hide">
 			<searchInRecipyList></searchInRecipyList>
 			<div class="search">
 				<input type="text" id="searchbox" placeholder="Suche" />
@@ -18,7 +18,7 @@
 				:recipyListData="recipyListData"
 				@send-currentRecipyId="getRecipiesId"
 			></recipyList>
-		</div>
+		</nav>
 		<div class="wrapper">
 			<div id="container_recipy">
 				<img :src="image" />
@@ -202,5 +202,111 @@ export default {
 </script>
 
 <style>
-@import "./assets/css/style.min.css";
+@import "./assets/css/variables.css";
+@import "./assets/css/style.css";
+
+/* kalam-regular - latin */
+@font-face {
+	font-family: "Kalam";
+	font-style: normal;
+	font-weight: 400;
+	src: local(""),
+		url("./assets/fonts/kalam-v15-latin-regular.woff2") format("woff2"),
+		url("./assets/fonts/kalam-v15-latin-regular.woff") format("woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	src: local(""),
+		url("./assets/fonts/open-sans-v28-latin-600.woff2") format("woff2"),
+		url("./assets/fonts/open-sans-v28-latin-600.woff") format("woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+	font-size: 0.8rem;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-weight: 600;
+	-webkit-print-color-adjust: exact;
+	width: 100%;
+}
+
+nav {
+	position: relative;
+	float: left;
+	padding-right: 5mm;
+	max-width: 30%;
+}
+
+.nav ul,
+.search {
+	padding: 0 10px 15px 35px;
+	margin: 0;
+	list-style-type: none;
+	font-weight: 400;
+	font-size: 0.8rem;
+}
+
+/* nav > ul > li > ul {
+	padding-left: 35px;
+	text-align: left;
+} */
+
+h1,
+h2,
+h3 {
+	font-family: "Kalam", Arial, sans-serif;
+}
+
+h1,
+h2 {
+	background-color: var(--main_color);
+	color: var(--inverted_text_color);
+	text-align: center;
+	text-transform: uppercase;
+	padding: 1rem 0 0.9rem 0;
+	font-size: 2.5rem;
+}
+
+h2 {
+	position: absolute;
+	top: 3%;
+	width: 100%;
+	border-bottom: 5px solid var(--inverted_text_color);
+	border-top: 5px solid var(--inverted_text_color);
+	margin: 0;
+	opacity: 0.8;
+}
+
+h3 {
+	color: var(--main_color);
+	font-size: 1.2rem;
+	margin: 0;
+	padding: 1rem 0 0 0;
+}
+
+.wrapper {
+	height: 277mm;
+	width: 190mm;
+	border: 1px solid var(--border_color);
+	margin-left: 5mm;
+	position: relative;
+	float: left;
+}
+
+.wrapper img {
+	width: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+.mobile-show {
+	display: none;
+}
 </style>

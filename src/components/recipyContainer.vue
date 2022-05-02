@@ -43,5 +43,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+ul {
+	padding: 0 15px 15px;
+}
+
+li {
+	padding-bottom: 5px;
+}
+
+.left {
+	position: relative;
+	float: right;
+	overflow: hidden;
+	width: 50%;
+	padding: 4mm 10mm 0 10mm;
+}
 </style>
