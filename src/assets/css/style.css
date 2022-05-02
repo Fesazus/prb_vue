@@ -2,29 +2,6 @@
 
 
 
-
-
-
-
-
-
-.boxed {
-  border: 1px solid #ffffe6;
-  box-shadow: 5px 5px 10px #bababa;
-  border-radius: 10px;
-  background-color: #ffffe6;
-}
-
-.boxed li {
-  list-style-type: none;
-  padding: 5px 0 0 0;
-  margin: 0;
-}
-
-.boxed li:last-of-type {
-  padding: 5px 0 10px 0;
-}
-
 @media screen and (max-width: 1150px) {
   .mobile-hide {
     display: none;
@@ -43,7 +20,7 @@
   .nav-hide-button {
     margin: 0 auto 10px;
   }
-  .nav {
+  nav {
     max-width: 100%;
   }
   .nav-ul li {
@@ -72,7 +49,7 @@
   .mobile-show {
     display: none;
   }
-  .nav {
+  nav {
     display: none;
   }
   h1 {
@@ -114,8 +91,5 @@
     display: block;
     height: 150px;
     width: 100%;
-  }
-  .platzhalter {
-    display: none;
   }
 }
