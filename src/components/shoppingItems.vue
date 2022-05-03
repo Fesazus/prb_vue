@@ -58,4 +58,23 @@ li {
 .boxed li:last-of-type {
 	padding: 5px 0 10px 0;
 }
+
+@media screen and (max-width: 1150px) {
+	.boxed {
+		width: auto;
+		margin-left: 10mm;
+	}
+	.right {
+		float: none;
+	}
+}
+
+@media print {
+	.boxed {
+		border: 1px solid #000;
+		box-shadow: none;
+		border-radius: none;
+		background-color: #fff;
+	}
+}
 </style>

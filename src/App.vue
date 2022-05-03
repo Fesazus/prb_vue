@@ -203,7 +203,6 @@ export default {
 
 <style>
 @import "./assets/css/variables.css";
-@import "./assets/css/style.css";
 
 /* kalam-regular - latin */
 @font-face {
@@ -314,5 +313,78 @@ h3 {
 
 .mobile-show {
 	display: none;
+}
+
+@media screen and (max-width: 1150px) {
+	.mobile-hide {
+		display: none;
+	}
+	.mobile-show {
+		display: block;
+	}
+	h1,
+	h2 {
+		font-size: 7vw;
+		padding: 4mm 0 2mm;
+		line-height: normal;
+		border-top: 0;
+		border-bottom: 0;
+	}
+	.nav-hide-button {
+		margin: 0 auto 10px;
+	}
+	nav {
+		max-width: 100%;
+	}
+	.wrapper {
+		height: auto;
+		width: auto;
+		border: 0;
+		margin-left: 0;
+	}
+}
+
+@media print {
+	html {
+		height: 277mm;
+		width: 210mm;
+	}
+	body {
+		height: 277mm;
+		width: 210mm;
+	}
+	nav {
+		display: none;
+	}
+	h1 {
+		display: none;
+	}
+	h2 {
+		background-color: #000;
+		margin: 0 auto 0;
+	}
+	h3 {
+		color: #000;
+	}
+	img {
+		display: none;
+	}
+	.mobile-show {
+		display: none;
+	}
+
+	.wrapper {
+		margin: 0;
+		padding: 0;
+		border: none;
+		height: 277mm;
+		width: 210mm;
+	}
+	.wrapper::before {
+		content: "";
+		display: block;
+		height: 150px;
+		width: 100%;
+	}
 }
 </style>

@@ -59,4 +59,14 @@ li {
 	width: 50%;
 	padding: 4mm 10mm 0 10mm;
 }
+
+@media screen and (max-width: 1150px) {
+	.nav-ul li {
+		padding: 16px 0 0 0;
+	}
+	.left {
+		float: none;
+		width: auto;
+	}
+}
 </style>
