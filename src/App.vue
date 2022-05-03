@@ -21,7 +21,8 @@
 		</nav>
 		<div class="wrapper">
 			<div id="container_recipy">
-				<img :src="image" />
+				<img v-show="image" :src="image" />
+				<div class="image_replacement" v-show="!image" />
 				<h2>{{ title }}</h2>
 				<recipyContainer
 					:amount="amount"
@@ -315,6 +316,12 @@ h3 {
 	display: none;
 }
 
+.image_replacement {
+	width: 100%;
+	height: 150px;
+	background-color: #fff;
+}
+
 @media screen and (max-width: 1150px) {
 	.mobile-hide {
 		display: none;
@@ -385,6 +392,9 @@ h3 {
 		display: block;
 		height: 150px;
 		width: 100%;
+	}
+	.image_replacement {
+		display: none;
 	}
 }
 </style>
