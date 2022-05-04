@@ -10,10 +10,9 @@
 			value="Navigation"
 		/>
 		<nav class="mobile-hide">
-			<searchInRecipyList></searchInRecipyList>
-			<div class="search">
-				<input type="text" id="searchbox" placeholder="Suche" />
-			</div>
+			<searchInRecipyList
+				:searchInCategories="searchInCategories"
+			></searchInRecipyList>
 			<recipyList
 				:recipyListData="recipyListData"
 				@send-currentRecipyId="getRecipiesId"
@@ -116,13 +115,13 @@ export default {
 					console.log("Error: " + error.code + " " + error.message);
 				});
 		},
-		getRecipyListData() {
+		getRecipyListData(searchItem) {
 			const recipyListData = this.recipies.map((item) => {
 				let list = [];
 				list.push(item.id);
 				list.push(item.attributes.Category);
 				list.push(item.attributes.Title);
-				// console.log(list);
+				console.log(list);
 				return list;
 			});
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
@@ -190,6 +189,37 @@ export default {
 					console.log("id nicht vorhanden");
 				}
 			});
+		},
+		searchInCategories(searchItem) {
+			//console.log("recipyListData");
+			//console.log(this.recipyListData);
+			const resultList = Object.values(this.recipyListData).forEach(
+				(categoryItems) => {
+					// console.log("categoryItems");
+					// console.log(listItem[2].toLowerCase());
+					//console.log(categoryItems);
+					//console.log(Object.values(categoryItems));
+
+					const filter = Object.values(categoryItems).filter(
+						(listItem) => {
+							// console.log("listItem");
+							// console.log(Object.values(listItem)[2]);
+							const res = Object.values(listItem)[2]
+								.toLowerCase()
+								.includes(searchItem.toLowerCase());
+							// console.log("res");
+							// console.log(res);
+							return res;
+						}
+					);
+					console.log("filter");
+					console.log(filter);
+					return filter;
+				}
+			);
+			console.log("resultList");
+			console.log(resultList);
+			this.recipyListData = resultList;
 		},
 	},
 	created() {
