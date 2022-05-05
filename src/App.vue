@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<!-- <dataBase></dataBase> -->
 		<navCookingBook></navCookingBook>
 		<router-view></router-view>
 	</div>
