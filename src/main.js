@@ -4,11 +4,15 @@ import mainApp from './components/mainApp.vue'
 import impressumWebsite from './components/impressumWebsite'
 import datenschutzWebsite from './components/datenschutzWebsite'
 import { createRouter, createWebHistory } from "vue-router"
+
+
 const app = createApp(App)
+
 const routes = [
     { path: "/", name: "Home", component: mainApp },
     { path: "/impressumWebsite", name: "Impressum", component: impressumWebsite },
     { path: "/datenschutzWebsite", name: "Datenschutz", component: datenschutzWebsite },
+    { path: "/", name: "Suche", component: mainApp, props: route => ({ query: route.query.id }) },
 ]
 
 const router = createRouter({

@@ -41,6 +41,8 @@ import searchInRecipyList from "./searchInRecipyList.vue";
 import dataBase from "./dataBase.vue";
 import Parse from "parse/dist/parse.min.js";
 
+import { useRoute } from "vue-router";
+
 export default {
 	name: "mainApp",
 	components: {
@@ -48,6 +50,9 @@ export default {
 		recipyContainer,
 		searchInRecipyList,
 		dataBase,
+	},
+	setup() {
+		//const route = useRoute();
 	},
 	data() {
 		return {
@@ -65,7 +70,9 @@ export default {
 			instructions: [],
 			recipyAppId: 0,
 			recipies: [],
+			DATASET: [],
 			recipyListData: [],
+			route: useRoute(),
 		};
 	},
 	methods: {
@@ -103,25 +110,27 @@ export default {
 			let queryAll = new Parse.Query(recipyTable);
 			queryAll
 				.findAll()
-				.then((recipies) => {
+				.then((dataBaseRes) => {
 					// console.log(this);
-					this.recipies = recipies;
-					// console.log(this.recipies);
+					this.recipies = dataBaseRes;
+					this.DATASET = dataBaseRes;
+					console.log("DATASET: ");
+					console.log(this.DATASET);
 					// console.log(this.recipies[0].attributes.Title);
 					this.getRecipyListData();
-					this.getRecipyOfTheDay(recipies);
+					this.getRecipyOfTheDay(this.recipies);
 				})
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
 				});
 		},
-		getRecipyListData(searchItem) {
+		getRecipyListData() {
 			const recipyListData = this.recipies.map((item) => {
 				let list = [];
 				list.push(item.id);
 				list.push(item.attributes.Category);
 				list.push(item.attributes.Title);
-				console.log(list);
+				//console.log(list);
 				return list;
 			});
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
@@ -191,35 +200,30 @@ export default {
 			});
 		},
 		searchInCategories(searchItem) {
-			//console.log("recipyListData");
-			//console.log(this.recipyListData);
-			const resultList = Object.values(this.recipyListData).forEach(
-				(categoryItems) => {
-					// console.log("categoryItems");
-					// console.log(listItem[2].toLowerCase());
-					//console.log(categoryItems);
-					//console.log(Object.values(categoryItems));
+			console.log("ROUTER ID: ");
+			console.log(this.route.query.id);
+			console.log(this.route.query.id);
+			this.resetSearchListe();
+			//console.log("recipies");
+			//console.log(this.recipies);
 
-					const filter = Object.values(categoryItems).filter(
-						(listItem) => {
-							// console.log("listItem");
-							// console.log(Object.values(listItem)[2]);
-							const res = Object.values(listItem)[2]
-								.toLowerCase()
-								.includes(searchItem.toLowerCase());
-							// console.log("res");
-							// console.log(res);
-							return res;
-						}
-					);
-					console.log("filter");
-					console.log(filter);
-					return filter;
-				}
-			);
-			console.log("resultList");
-			console.log(resultList);
-			this.recipyListData = resultList;
+			const filterResult = this.recipies.filter((listItem) => {
+				// console.log("listItem");
+				// console.log(Object.values(listItem)[2]);
+				const res = listItem.attributes.Title.toLowerCase().includes(
+					searchItem.toLowerCase()
+				);
+				// console.log("res");
+				// console.log(res);
+				return res;
+			});
+			//console.log("filter");
+			//console.log(filterResult);
+			this.recipies = filterResult;
+			this.getRecipyListData();
+		},
+		resetSearchListe() {
+			this.recipies = this.DATASET;
 		},
 	},
 	created() {

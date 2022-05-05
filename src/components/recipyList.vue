@@ -31,6 +31,7 @@ export default {
 			this.currentRecipyId = Id;
 			// console.log("recipyId");
 			// console.log(Id);
+			this.$router.replace({ query: { id: Id } });
 			this.$emit("send-currentRecipyId", this.currentRecipyId);
 		},
 	},

@@ -5,7 +5,7 @@
 			type="text"
 			id="searchbox"
 			placeholder="Rezeptsuche"
-			@change="searchInCategories(searchItem)"
+			@keyup="searchInput(searchItem)"
 		/>
 	</div>
 </template>
@@ -18,6 +18,12 @@ export default {
 		return {
 			searchItem: "",
 		};
+	},
+	methods: {
+		searchInput() {
+			this.$router.replace({ query: { id: this.searchItem } });
+			this.searchInCategories(this.searchItem);
+		},
 	},
 };
 </script>
