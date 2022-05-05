@@ -4,7 +4,7 @@
 			v-model="searchItem"
 			type="text"
 			id="searchbox"
-			placeholder="Suche"
+			placeholder="Rezeptsuche"
 			@change="searchInCategories(searchItem)"
 		/>
 	</div>
@@ -24,8 +24,9 @@ export default {
 
 <style scoped>
 input {
-	height: 50px;
-	font-size: 1.6rem;
+	height: 40px;
+	font-size: 1.4rem;
 	padding: 0 3px;
+	width: 300px;
 }
 </style>

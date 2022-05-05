@@ -1,10 +1,13 @@
 <template>
 	<div class="main_nav">
 		<div class="menue_item">
-			<router-link to="/">Recipies</router-link>
+			<router-link to="/">Rezepte</router-link>
 		</div>
 		<div class="menue_item">
 			<router-link to="/impressumWebsite">Impressum</router-link>
+		</div>
+		<div class="menue_item">
+			<router-link to="/datenschutzWebsite">Datenschutz</router-link>
 		</div>
 	</div>
 </template>
@@ -26,5 +29,10 @@ export default {};
 	padding: 10px 20px;
 	font-size: 1rem;
 	text-decoration: none;
+	color: var(--main_color);
+}
+
+.menue_item a:hover {
+	color: var(--text_default_color);
 }
 </style>

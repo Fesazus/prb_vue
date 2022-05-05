@@ -2,11 +2,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import mainApp from './components/mainApp.vue'
 import impressumWebsite from './components/impressumWebsite'
+import datenschutzWebsite from './components/datenschutzWebsite'
 import { createRouter, createWebHistory } from "vue-router"
 const app = createApp(App)
 const routes = [
     { path: "/", name: "Home", component: mainApp },
     { path: "/impressumWebsite", name: "Impressum", component: impressumWebsite },
+    { path: "/datenschutzWebsite", name: "Datenschutz", component: datenschutzWebsite },
 ]
 
 const router = createRouter({

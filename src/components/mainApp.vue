@@ -93,8 +93,10 @@ export default {
 			document.head.appendChild(Script);
 			// Initialize Parse
 			Parse.initialize(
-				"ACZFwLfcjciL0G4bgtGSGloBIuXyMYucSBFrp4Er",
-				"ALxepfxOexSgKIiQHlFOV0YSJ4EKxiyRIPHC8ErH"
+				"AJYq67NCkJgwHMq2NQRgjnSQIWkrGiwlu5UUguLP",
+				"A1qYNb0ZGwfhUmDOwGVoyrfw0pGBFczvVGErePXt"
+				/* 	"ACZFwLfcjciL0G4bgtGSGloBIuXyMYucSBFrp4Er",
+				"ALxepfxOexSgKIiQHlFOV0YSJ4EKxiyRIPHC8ErH" */
 			); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
 			Parse.serverURL = "https://parseapi.back4app.com/";
 			let recipyTable = Parse.Object.extend("Recipy");
