@@ -94,7 +94,11 @@ export default {
 					// console.log(this.dataset);
 					// console.log(this.recipies[0].attributes.Title);
 					this.getRecipyListData();
-					this.getRecipyOfTheDay(this.recipies);
+					if (this.$route.query.id) {
+						this.getRecipiesId(this.$route.query.id);
+					} else {
+						this.getRecipyOfTheDay(this.recipies);
+					}
 				})
 				.catch(function (error) {
 					console.log("Error: " + error.code + " " + error.message);
@@ -112,27 +116,23 @@ export default {
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
 		getRecipyOfTheDay(recipies) {
-			if (this.$route.query.id) {
-				// console.log("url erkannt");
+			// console.log(this.$route.query.id);
+			let randomNumber = Math.floor(
+				Math.random() * (this.recipies.length + 1)
+			);
+			console.log("randomNumber");
+			console.log(randomNumber);
+			this.title = this.recipies[randomNumber].attributes.Title;
+			this.ingredients =
+				this.recipies[randomNumber].attributes.Ingredients;
+			this.amount = this.recipies[randomNumber].attributes.Amount;
+			this.instructions = JSON.parse(
+				this.recipies[randomNumber].attributes.Instructions
+			);
+			if (item.attributes.Image) {
+				this.image = item.attributes.Image._url;
 			} else {
-				// console.log(this.$route.query.id);
-				let randomNumber = Math.floor(
-					Math.random() * (this.recipies.length + 1)
-				);
-				console.log("randomNumber");
-				console.log(randomNumber);
-				this.title = this.recipies[randomNumber].attributes.Title;
-				this.ingredients =
-					this.recipies[randomNumber].attributes.Ingredients;
-				this.amount = this.recipies[randomNumber].attributes.Amount;
-				this.instructions = JSON.parse(
-					this.recipies[randomNumber].attributes.Instructions
-				);
-				if (item.attributes.Image) {
-					this.image = item.attributes.Image._url;
-				} else {
-					this.image = "";
-				}
+				this.image = "";
 			}
 		},
 		removeDoubledCategorys(recipyListData) {
