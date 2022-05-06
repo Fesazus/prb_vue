@@ -3,6 +3,7 @@ import App from './App.vue'
 import mainApp from './components/mainApp.vue'
 import impressumWebsite from './components/impressumWebsite'
 import datenschutzWebsite from './components/datenschutzWebsite'
+//import recipyList from './components/recipyList'
 import { createRouter, createWebHistory } from "vue-router"
 
 
@@ -13,6 +14,7 @@ const routes = [
     { path: "/impressumWebsite", name: "Impressum", component: impressumWebsite },
     { path: "/datenschutzWebsite", name: "Datenschutz", component: datenschutzWebsite },
     { path: "/", name: "Suche", component: mainApp, props: route => ({ query: route.query.id }) },
+    { path: "/", name: "choice", component: mainApp, props: route => ({ query: route.query.id }) },
 ]
 
 const router = createRouter({

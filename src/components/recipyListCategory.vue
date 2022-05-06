@@ -9,7 +9,14 @@
 					:id="categoryItem[0]"
 					@click="sendRecipyId"
 				>
-					{{ categoryItem[2] }}
+					<router-link
+						:to="{
+							name: 'choice',
+							path: '/',
+							query: { id: categoryItem[0] },
+						}"
+						>{{ categoryItem[2] }}</router-link
+					>
 				</li>
 			</ul>
 		</div>
@@ -27,6 +34,7 @@ export default {
 	data() {
 		return {
 			recipyId: 0,
+			allItems: [...this.categoryItems],
 		};
 	},
 	methods: {
@@ -43,7 +51,9 @@ export default {
 	},
 	computed: {
 		sortRecipies() {
-			return [...this.categoryItems].sort(function (a, b) {
+			console.log("allItems");
+			console.log(this.allItems);
+			return [...this.allItems].sort(function (a, b) {
 				return a[2].localeCompare(b[2]);
 			});
 		},

@@ -23,15 +23,12 @@ export default {
 		};
 	},
 	props: {
-		// categoryItems: Object,
+		//categoryItems: Object,
 		recipyListData: Object,
 	},
 	methods: {
-		sendRecipyIdApp(Id) {
-			this.currentRecipyId = Id;
-			// console.log("recipyId");
-			// console.log(Id);
-			this.$router.replace({ query: { id: Id } });
+		sendRecipyIdApp() {
+			this.currentRecipyId = this.$route.query.id;
 			this.$emit("send-currentRecipyId", this.currentRecipyId);
 		},
 	},

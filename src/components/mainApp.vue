@@ -112,22 +112,27 @@ export default {
 			this.recipyListData = this.removeDoubledCategorys(recipyListData);
 		},
 		getRecipyOfTheDay(recipies) {
-			let randomNumber = Math.floor(
-				Math.random() * (this.recipies.length + 1)
-			);
-			console.log("randomNumber");
-			console.log(randomNumber);
-			this.title = this.recipies[randomNumber].attributes.Title;
-			this.ingredients =
-				this.recipies[randomNumber].attributes.Ingredients;
-			this.amount = this.recipies[randomNumber].attributes.Amount;
-			this.instructions = JSON.parse(
-				this.recipies[randomNumber].attributes.Instructions
-			);
-			if (item.attributes.Image) {
-				this.image = item.attributes.Image._url;
+			if (this.$route.query.id) {
+				// console.log("url erkannt");
 			} else {
-				this.image = "";
+				// console.log(this.$route.query.id);
+				let randomNumber = Math.floor(
+					Math.random() * (this.recipies.length + 1)
+				);
+				console.log("randomNumber");
+				console.log(randomNumber);
+				this.title = this.recipies[randomNumber].attributes.Title;
+				this.ingredients =
+					this.recipies[randomNumber].attributes.Ingredients;
+				this.amount = this.recipies[randomNumber].attributes.Amount;
+				this.instructions = JSON.parse(
+					this.recipies[randomNumber].attributes.Instructions
+				);
+				if (item.attributes.Image) {
+					this.image = item.attributes.Image._url;
+				} else {
+					this.image = "";
+				}
 			}
 		},
 		removeDoubledCategorys(recipyListData) {
@@ -172,8 +177,6 @@ export default {
 			});
 		},
 		searchInCategories(searchItem) {
-			console.log("ROUTER ID: ");
-			console.log(this.route.query.id);
 			console.log(this.route.query.id);
 			this.resetSearchListe();
 			//console.log("recipies");
