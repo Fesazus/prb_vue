@@ -33,8 +33,6 @@ export default {
 	},
 	data() {
 		return {
-			recipyId: 0,
-			allItems: [...this.categoryItems],
 		};
 	},
 	methods: {
@@ -51,14 +49,9 @@ export default {
 	},
 	computed: {
 		sortRecipies() {
-			console.log("allItems");
-			console.log(this.allItems);
-			return [...this.allItems].sort(function (a, b) {
+			return [...this.categoryItems].sort(function (a, b) {
 				return a[2].localeCompare(b[2]);
 			});
-		},
-		setId() {
-			this.recipyId = categoryItem[0];
 		},
 	},
 };
