@@ -13,7 +13,7 @@ const routes = [
     { path: "/", name: "Home", component: mainApp },
     { path: "/impressumWebsite", name: "Impressum", component: impressumWebsite },
     { path: "/datenschutzWebsite", name: "Datenschutz", component: datenschutzWebsite },
-    { path: "/", name: "Suche", component: mainApp, props: route => ({ query: route.query.id }) },
+    { path: "/", name: "Suche", component: mainApp, props: route => ({ query: route.query.searchString }) },
     { path: "/", name: "choice", component: mainApp, props: route => ({ query: route.query.id }) },
 ]
 

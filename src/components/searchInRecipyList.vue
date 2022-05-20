@@ -21,7 +21,7 @@ export default {
 	},
 	methods: {
 		searchInput() {
-			this.$router.replace({ query: { id: this.searchItem } });
+			this.$router.replace({ query: { searchString: this.searchItem } });
 			this.searchInCategories(this.searchItem);
 		},
 	},
