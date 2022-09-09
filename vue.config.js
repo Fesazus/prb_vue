@@ -4,5 +4,6 @@ module.exports = defineConfig({
   configureWebpack: {
     devtool: 'source-map'
   },
-  lintOnSave: false
+  lintOnSave: false,
+  publicPath: '/prb_vue/'
 })
