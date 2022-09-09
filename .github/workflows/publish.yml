@@ -12,3 +12,4 @@ jobs:
                   username: "Fesazus"
                   reponame: "prb_vue"
                   token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+                  cname: prb.eurador.de

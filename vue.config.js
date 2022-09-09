@@ -5,5 +5,4 @@ module.exports = defineConfig({
     devtool: 'source-map'
   },
   lintOnSave: false,
-  publicPath: '/prb_vue/'
 })
