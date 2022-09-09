@@ -89,4 +89,13 @@ li:hover,
 .nav-ul li:first-of-type {
 	padding-top: 10px;
 }
+
+a {
+	text-decoration: none;
+	color: var(--default_text_color);
+}
+a:hover {
+	text-decoration: none;
+	color: var(--main_color);
+}
 </style>
